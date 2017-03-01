@@ -1,16 +1,17 @@
 # ACS_pipeline
 A pre-processing and post-processing pipeline for formatting and analyzing Hubble Space Telescope Galactic Globular Cluster Treasury photometry with BASE-9
 
-
-[Introduction](#Intro)<br />
-[Summary of Data and Code](#Summary)<br />
-[Directory Structure](#Structure)<br/>
-[Repository Contents](#RepoStuff)<br/>
-[ACS Pipeline Functions](#Functions)<br />
-- [Pre-Processing](#Process) <br />
-- [Post-Computation](#Compute)<br />
-[Test Case Example](#Code)<br />
-[Additional Information](#Other)<br />
+<br />
+## Contents
+- [Introduction](#Intro)<br />
+- [Summary of Data and Code](#Summary)<br />
+- [Directory Structure](#Structure)<br/>
+- [Repository Contents](#RepoStuff)<br/>
+- [ACS Pipeline Functions](#Functions)<br />
+ - [Pre-Processing](#Process) <br />
+ - [Post-Computation](#Compute)<br />
+- [Test Case Example](#Code)<br />
+- [Additional Information](#Other)<br />
 
 
 <br/>
@@ -30,11 +31,11 @@ The code presented in this repository was used in a 2017 publication to analyze 
 
 The excerpt from [WK et al. 2017](https://arxiv.org/abs/1702.08856) summarizes the primary goals of the pre-processing performed via the ACS pipeline package:
 
-"The ACS Globular Cluster Treasury program has provided observations of several hundred thousand stars [in two HST filters, F606W and F814W]. To help BASE-9 perform effectively, we make modest quality cuts on the photometry for the clusters before randomly selecting a subsample of stars. To rid the data of any stars with poorly determined photometry, we remove stars for which both filters fall into the outer 5% tail of the photometric error distributions. 
+>"The ACS Globular Cluster Treasury program has provided observations of several hundred thousand stars [in two HST filters, F606W and F814W]. To help BASE-9 perform effectively, we make modest quality cuts on the photometry for the clusters before randomly selecting a subsample of stars. To rid the data of any stars with poorly determined photometry, we remove stars for which both filters fall into the outer 5% tail of the photometric error distributions. 
 
-Additionally, we remove stars in the outer 2.5% tails of the distributions of X and Y pixel location errors from frame to frame, as high pixel location errors may indicate non-cluster members. The exceptions to this are the clusters NGC 5986, NGC 6397, and NGC 6779. For these clusters, we ignore the location error constraint as it removes the majority of bright stars above the main sequence turn-off that were observed in the short exposure images. However, we still remove stars in the outer 5% tail of the photometric error distributions for both filters. 
+>Additionally, we remove stars in the outer 2.5% tails of the distributions of X and Y pixel location errors from frame to frame, as high pixel location errors may indicate non-cluster members. The exceptions to this are the clusters NGC 5986, NGC 6397, and NGC 6779. For these clusters, we ignore the location error constraint as it removes the majority of bright stars above the main sequence turn-off that were observed in the short exposure images. However, we still remove stars in the outer 5% tail of the photometric error distributions for both filters. 
 
-With the cleaned photometry, we randomly select a subsample of ~ 3000 stars, with half above the main sequence turnoff point (MSTOP) of the cluster and half below the MSTOP. If there are fewer than 1500 stars above the MSTOP, we match the number of stars above and below the MSTOP. This procedure is adopted to ensure a reasonable sample of stars on the sub-giant and red-giant branches, while balancing their contribution with MS stars, without the computational cost of running 10,000 or more stars per cluster."
+>With the cleaned photometry, we randomly select a subsample of ~ 3000 stars, with half above the main sequence turnoff point (MSTOP) of the cluster and half below the MSTOP. If there are fewer than 1500 stars above the MSTOP, we match the number of stars above and below the MSTOP. This procedure is adopted to ensure a reasonable sample of stars on the sub-giant and red-giant branches, while balancing their contribution with MS stars, without the computational cost of running 10,000 or more stars per cluster."
 
 
 The ACS pipeline here also formats the cleaned and sample photometry to output files such that they can be easily used with BASE-9 by putting the filepath into the BASE-9 .yaml file.
