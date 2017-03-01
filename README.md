@@ -4,8 +4,11 @@ A pre-processing and post-processing pipeline for formatting and analyzing Hubbl
 
 [Introduction](#Intro)<br />
 [Summary of Data and Code](#Summary)<br />
-[Directory Structure & Repository Contents](#RepoStuff)<br/>
+[Directory Structure](#Structure)<br/>
+[Repository Contents](#RepoStuff)<br/>
 [ACS Pipeline Functions](#Functions)<br />
+- [Pre-Processing](#Process) <br />
+- [Post-Computation](#Compute)<br />
 [Test Case Example](#Code)<br />
 [Additional Information](#Other)<br />
 
@@ -47,8 +50,8 @@ Manuals for the use and implementation of BASE-9 are available [here](https://ar
 
 
 <br/>
-<a name="Summary"/>
-## Summary of Data and Code
+<a name="Structure"/>
+## Directory Structure
 
 When initializing the pipeline for a cluster, there are two initial inputs - the directory filepath and the cluster name: ACSpipeline(clusterval, basefolder)
 
@@ -103,7 +106,10 @@ This repo contains the following files:
 <a name="Functions"/>
 ## ACS Pipeline Functions
 
-**Pre-processing**
+<br/>
+<a name="Process"/>
+### Pre-processing
+
 - **ACSpipeline(clusterval, basefolder)** - initiates processing/analysis pipeline for HST/ACS photometry of Galactic globular clusters<br/>
 
 - **checkHB(self,showplt='Yes')** - Use to visually examine CMD and horizontal branch in particular (useful in conjunction with make_cuts() to clean up/remove HB stars).<br/>
@@ -128,7 +134,9 @@ This repo contains the following files:
 - **check_sample(self,titleon='Yes')** - This functions allows the user to double-check the results of the pre-processing of the ACS photometry, with cleaned photometry in black, and the randomly selected sample of n stars in green<br/>
 
 <br/>
-**Post-Computation**
+<br/>
+<a name="Compute"/>
+### Post-Computation
 
 - **plot_MCMCresults(self,vnum,meansline=27,saveYN='Yes',plotpriors='No',printtable='No',startn=1001,noY='False')** - Following the BASE-9 calculations, this function enables the user to examine the MCMC chains for each parameter and the resulting posterior distributions. An option also will provide a printed LaTeX table of the results.
     - *vnum* - file number of the results file to plot (e.g.: for a BASE-9 results file NGC0104.v2.res, vnum='2')
