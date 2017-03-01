@@ -1,0 +1,132 @@
+general:
+    verbose:            0     # 0 is quiet, 1 is verbose, 2 is very verbose
+
+    files: # This will change to "paths" in a future version
+        photFile:       "NGC0104/NGC0104.sampleACS.phot"
+        outputFileBase: "NGC0104/NGC0104.v2"
+        modelDirectory: "base-models/"
+        scatterFile:    ""    # Empty string.  This is primarily a CLI option
+
+    main_sequence:
+        msRgbModel:     4     # 0 = Girardi, 1 = Chaboyer-Dotter w/He sampling, 2 = Yale-Yonsei, 3 = Old (jc2mass) DSED, 4 = New DSED
+
+    white_dwarfs:
+        wdModel:        1     # 0 = Wood, 1 = Montgomery, 2 = Althaus, 3 = Renedo
+        M_wd_up:        8.0   # The maximum mass for a WD-producing star
+        ifmr:           1     # 0 = Weidemann, 1 = Williams, 2 = Salaris lin, 3 = Salaris pw lin, 4+ = tunable
+
+    cluster:
+        starting:
+            Fe_H:        -0.72
+            distMod:     13.37
+            Av:          0.124
+            Y:           0.24
+            carbonicity: 0.00
+            logAge:      10.11
+
+        priors:
+            means:
+                Fe_H:        -0.72
+                distMod:     13.37
+                Av:          0.124
+                Y:           0.24
+                carbonicity: 0.00
+                logAge:      10.11
+
+            sigmas:
+                Fe_H:        0.00
+                distMod:     0.05
+                Av:          0.04
+                Y:           0.01
+                carbonicity: 0.0
+                logAge:      .inf
+
+
+        minMag:         0   # these variables can be used to read a subset of the photometry
+        maxMag:         30
+        index:          0     # with 0 being the first filter in the dataset
+
+makeIsochrone:
+    # No makeIsochrone-specific settings yet
+
+scatterCluster:
+     brightLimit:       -10   # apparant mags, can remove bright stars, e.g. RGB
+     faintLimit:        30    # apparant mags, can remove faint stars, e.g. faint MS and WDs
+     relevantFilt:      0     # 0=bluest band available
+     limitS2N:          1     # use to remove objects with overly low signal-to-noise
+     crowded:           yes    # Determines which signal to noise coefficients are used
+     exposures: # exposure times in hours
+         U:       1
+         B:       1
+         V:       1
+         R:       1
+         I:       1
+         J:       1
+         H:       1
+         K:       1
+         UVf275w: .21
+         UVf336w: .083
+         UVf438w: .02
+         F606W:   .042
+         F814W:   .042
+
+makeCMD:
+    # No makeCMD-specific settings yet
+
+singlePopMcmc:
+    stage2IterMax:      2000
+    stage3Iter:         1000
+    runIter:            11000
+    thin:               1
+
+    # Adaptive burnin parameters
+    # To duplicate the pre-adaptive behaviour, set
+    # adaptive:
+    #     bigStepIter:    0
+    #     trialIter:      2000  # Same as burnIter
+    #
+    # To duplicate big-step only burnin, set
+    # adaptive:
+    #     bigStepIter:    2000
+    #     trialIter:      2000
+    adaptive:
+        bigStepIter:    100
+        trialIter:      100
+
+    stepSizes:
+        age:            0.005
+        Fe_H:           0.005
+        distMod:        0.005
+        Av:             0.002
+        Y:              0.003
+        carbonicity:    0.001
+        ifmrIntercept:  0.01
+        ifmrSlope:      0.008
+        ifmrQuadCoef:   0.008
+
+multiPopMcmc:
+    Y_starting: [0.2467, 0.33]
+    YA_start:           0.2467
+    YB_start:           0.33
+    lambda_start:       0.50
+
+    Y_limits:   [0.15, 0.30, 0.45]
+    YA_lo:              0.15
+    YA_hi:              0.30
+    YB_hi:              0.45
+
+    lambdaStep:         0.01
+
+sampleWDMass:
+    # No sampleWDMass-specific settings yet
+
+sampleMass:
+    deltaMass:          0.0005
+    deltaMassRatio:     0.001
+
+simCluster:
+    nStars:             100000
+    percentBinary:      0     # percent binaries (drawn randomly)
+    percentDB:          0     # percent of WDs that have He atmospheres (drawn randomly)
+    nFieldStars:        0
+    nBrownDwarfs:       0
