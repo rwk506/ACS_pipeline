@@ -75,7 +75,7 @@ Within each cluster-level folder: 'basefolder/NGC'+clusterval<br/>
 Additional notes/suggestions:
 - Either place this python code in the parent directory to 'self.basefolder'; else, give full pathname when initiating pipeline - realize that changes to or deviations from directory structure may lead to errors!
 - When not using them, keep base9.yaml files named as base9_clusterval.yaml; temporarily rename to base9.yaml to initiate BASE-9 calculations, then return to labeled name
-- Soft links should work fine when organizing your directory; see example image from this GitHub repo directory setup [here](ACS_pipeline/Directory_Structure.png).
+- Soft links should work fine when organizing your directory; see example image from this GitHub repo directory setup [here](https://github.com/rwk506/ACS_pipeline/blob/master/ACS_pipeline/Directory_Structure.png).
 
 
 
