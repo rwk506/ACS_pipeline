@@ -111,7 +111,7 @@ This repo contains the following files:
 
 <br/>
 <a name="Process"/>
-**Pre-processing**
+<h4>Pre-processing</h4>
 
 - **ACSpipeline(clusterval, basefolder)** - initiates processing/analysis pipeline for HST/ACS photometry of Galactic globular clusters<br/>
 
@@ -139,7 +139,7 @@ This repo contains the following files:
 <br/>
 <br/>
 <a name="Compute"/>
-**Post-Computation**
+<h4>Post-Computation</h4>
 
 - **plot_MCMCresults(self,vnum,meansline=27,saveYN='Yes',plotpriors='No',printtable='No',startn=1001,noY='False')** - Following the BASE-9 calculations, this function enables the user to examine the MCMC chains for each parameter and the resulting posterior distributions. An option also will provide a printed LaTeX table of the results.
     - *vnum* - file number of the results file to plot (e.g.: for a BASE-9 results file NGC0104.v2.res, vnum='2')
