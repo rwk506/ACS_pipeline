@@ -18,7 +18,7 @@ A pre-processing and post-processing pipeline for formatting and analyzing Hubbl
 
 <br />
 <a name="Intro"/>
-<h4>Introduction</ h4>
+<h4>Introduction</h4>
 
 The package presented here is a data processing and analysis pipeline to be used in conjunction with and complement to the [BASE-9 software](https://github.com/argiopetech/BASE). Bayesian Analysis for Stellar Evolution with Nine Variables (BASE-9) is a software suite that recovers star cluster and stellar parameters from photometry via hierarchical Bayesian modeling with physics-based theoretical models. BASE-9 uses a Markov chain Monte Carlo (MCMC) technique along with brute force numerical integration to estimate the posterior probability distribution for parameters of interest to the user.
 
