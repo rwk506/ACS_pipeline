@@ -29,7 +29,7 @@ The code presented in this repository was used in a 2017 publication to analyze 
 
 <br/>
 <a name="Summary"/>
-<h4>Summary of Data and Code</ h4>
+<h4>Summary of Data and Code</h4>
 
 The excerpt below from [WK et al. 2017](https://arxiv.org/abs/1702.08856) summarizes the primary goals of the pre-processing performed via the ACS pipeline package:
 
