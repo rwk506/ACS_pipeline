@@ -2,21 +2,23 @@
 A pre-processing and post-processing pipeline for formatting and analyzing Hubble Space Telescope Galactic Globular Cluster Treasury photometry with BASE-9
 
 <br />
-## Contents
-- [Introduction](#Intro)<br />
-- [Summary of Data and Code](#Summary)<br />
-- [Directory Structure](#Structure)<br/>
-- [Repository Contents](#RepoStuff)<br/>
-- [ACS Pipeline Functions](#Functions)<br />
- - [Pre-Processing](#Process) <br />
- - [Post-Computation](#Compute)<br />
-- [Test Case Example](#Code)<br />
-- [Additional Information](#Other)<br />
+
+**Contents**
+
+[Introduction](#Intro)<br />
+[Summary of Data and Code](#Summary)<br />
+[Directory Structure](#Structure)<br />
+[Repository Contents](#RepoStuff)<br />
+[ACS Pipeline Functions](#Functions)<br />
+[Pre-Processing](#Process) <br />
+[Post-Computation](#Compute)<br />
+[Test Case Example](#Code)<br />
+[Additional Information](#Other)<br />
 
 
-<br/>
+<br />
 <a name="Intro"/>
-## Introduction
+<h4>Introduction</ h4>
 
 The package presented here is a data processing and analysis pipeline to be used in conjunction with and complement to the [BASE-9 software](https://github.com/argiopetech/BASE). Bayesian Analysis for Stellar Evolution with Nine Variables (BASE-9) is a software suite that recovers star cluster and stellar parameters from photometry via hierarchical Bayesian modeling with physics-based theoretical models. BASE-9 uses a Markov chain Monte Carlo (MCMC) technique along with brute force numerical integration to estimate the posterior probability distribution for parameters of interest to the user.
 
@@ -27,9 +29,9 @@ The code presented in this repository was used in a 2017 publication to analyze 
 
 <br/>
 <a name="Summary"/>
-## Summary of Data and Code
+<h4>Summary of Data and Code</ h4>
 
-The excerpt from [WK et al. 2017](https://arxiv.org/abs/1702.08856) summarizes the primary goals of the pre-processing performed via the ACS pipeline package:
+The excerpt below from [WK et al. 2017](https://arxiv.org/abs/1702.08856) summarizes the primary goals of the pre-processing performed via the ACS pipeline package:
 
 >"The ACS Globular Cluster Treasury program has provided observations of several hundred thousand stars [in two HST filters, F606W and F814W]. To help BASE-9 perform effectively, we make modest quality cuts on the photometry for the clusters before randomly selecting a subsample of stars. To rid the data of any stars with poorly determined photometry, we remove stars for which both filters fall into the outer 5% tail of the photometric error distributions. 
 
@@ -52,7 +54,7 @@ Manuals for the use and implementation of BASE-9 are available [here](https://ar
 
 <br/>
 <a name="Structure"/>
-## Directory Structure
+<h4>Directory Structure</h4>
 
 When initializing the pipeline for a cluster, there are two initial inputs - the directory filepath and the cluster name: ACSpipeline(clusterval, basefolder)
 
@@ -82,7 +84,7 @@ Additional notes/suggestions:
 
 <br/>
 <a name="RepoStuff"/>
-## Repository Contents
+<h4>Repository Contents</h4>
 
 This repo contains the following files:
 
@@ -105,11 +107,11 @@ This repo contains the following files:
 
 <br/>
 <a name="Functions"/>
-## ACS Pipeline Functions
+<h4>ACS Pipeline Functions</h4>
 
 <br/>
 <a name="Process"/>
-### Pre-processing
+**Pre-processing**
 
 - **ACSpipeline(clusterval, basefolder)** - initiates processing/analysis pipeline for HST/ACS photometry of Galactic globular clusters<br/>
 
@@ -137,7 +139,7 @@ This repo contains the following files:
 <br/>
 <br/>
 <a name="Compute"/>
-### Post-Computation
+**Post-Computation**
 
 - **plot_MCMCresults(self,vnum,meansline=27,saveYN='Yes',plotpriors='No',printtable='No',startn=1001,noY='False')** - Following the BASE-9 calculations, this function enables the user to examine the MCMC chains for each parameter and the resulting posterior distributions. An option also will provide a printed LaTeX table of the results.
     - *vnum* - file number of the results file to plot (e.g.: for a BASE-9 results file NGC0104.v2.res, vnum='2')
@@ -164,7 +166,7 @@ This repo contains the following files:
 
 <br/>
 <a name="Code"/>
-## Test Case Example
+<h4>Test Case Example</h4>
 
 An worked-through example of this pipeline in action is provided for the test cluster NGC 104. The Jupyter notebook of this analysis can be downloaded and edited for your own use or perused [here](https://github.com/rwk506/ACS_pipeline/blob/master/ACS_Pipeline.ipynb).
 
@@ -173,7 +175,7 @@ An worked-through example of this pipeline in action is provided for the test cl
 
 <br/>
 <a name="Other"/>
-## Additional Information
+<h4>Additional Information</h4>
 
 Author: RWK
 
